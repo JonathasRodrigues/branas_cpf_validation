@@ -15,18 +15,13 @@ test("Should be invalid when CPF with repeated digits", () => {
     expect(isValid).toBe(false);
 })
 
-test("Should be invalid when only blanks", () => {
-    const isValid = validate('     ');
-    expect(isValid).toBe(false);
-})
-
 test("Should be invalid when empty CPF", () => {
     const isValid = validate('');
     expect(isValid).toBe(false);
 })
 
 test("Should be valid when valid CPF doesnt contain . and -", () => {
-    const isValid = validate('40245479848');
+    const isValid = validate('16078964003');
     expect(isValid).toBe(true);
 })
 
@@ -45,3 +40,12 @@ test("Should be valid when valid CPF", () => {
     expect(isValid).toBe(true);
 })
 
+test("Should be invalid when CPF length is bigger than 11", () => {
+    const isValid = validate('123.456.789-0123456');
+    expect(isValid).toBe(false);
+})
+
+test("Should be invalid when CPF length is lower than 11", () => {
+    const isValid = validate('123.456');
+    expect(isValid).toBe(false);
+})
