@@ -1,4 +1,4 @@
-import { validate } from "./cpf";
+import { validate } from "../src/cpf";
 
 test("Should be valid when valid CPF", () => {
     const isValid = validate('402.454.798-48');
@@ -33,11 +33,6 @@ test("Should be invalid when CPF contains string", () => {
 test("Should be invalid when CPF is only string", () => {
     const isValid = validate('blahblah');
     expect(isValid).toBe(false);
-})
-
-test("Should be valid when valid CPF", () => {
-    const isValid = validate('402.454.798-48');
-    expect(isValid).toBe(true);
 })
 
 test("Should be invalid when CPF length is bigger than 11", () => {
