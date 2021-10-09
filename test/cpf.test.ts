@@ -1,4 +1,4 @@
-import { validate } from "../src/cpf";
+import { validate } from "../src/Cpf";
 
 test("Should be valid when valid CPF", () => {
     const isValid = validate('402.454.798-48');
